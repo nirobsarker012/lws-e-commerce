@@ -2,6 +2,7 @@ import React from "react";
 import Header from "../components/Header";
 import CardList from "../components/Card/CardList";
 import MyCardList from "../components/Card/MyCardList";
+import Newsletter from "../components/Newsletter";
 
 const Home = () => {
   return (
@@ -13,6 +14,8 @@ const Home = () => {
           <MyCardList />
         </div>
       </main>
+      {/* NewsLetter Sections */}
+      <Newsletter />
     </>
   );
 };
