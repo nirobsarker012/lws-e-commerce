@@ -2,7 +2,7 @@
 @import "tailwindcss";
 
 .container {
-  @apply max-w-[1370px] w-[calc(100%-20px)] mx-auto;
+  @apply max-w-[1460px] w-[calc(100%-20px)] mx-auto;
 }
 
 body {

@@ -3,6 +3,7 @@ import Header from "../components/Header";
 import CardList from "../components/Card/CardList";
 import MyCardList from "../components/Card/MyCardList";
 import Newsletter from "../components/Newsletter";
+import Footer from "../components/Footer";
 
 const Home = () => {
   return (
@@ -16,6 +17,8 @@ const Home = () => {
       </main>
       {/* NewsLetter Sections */}
       <Newsletter />
+      {/* Footer */}
+      <Footer />
     </>
   );
 };
