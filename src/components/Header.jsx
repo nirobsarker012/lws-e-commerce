@@ -1,8 +1,34 @@
-import React from "react";
+import React, { use, useState } from "react";
+import ShowCart from "./ShowCart/ShowCart";
+import { AllProductContext } from "../contexts/ProductContext";
 
 const Header = () => {
+  const [showCart, setShowCart] = useState(false);
+  const { addCartProduct, setAddCartProduct } = use(AllProductContext);
+  // console.log(addCartProduct);
+  const handleShowCart = () => {
+    setShowCart(true);
+  };
+  const handleCancelbtn = () => {
+    setShowCart(false);
+  };
+
+  const handleDeleteCart = (e, productID) => {
+    e.preventDefault();
+    console.log(productID);
+    const filterItem = addCartProduct.filter((item) => item.id !== productID);
+    setAddCartProduct([...filterItem]);
+  };
+
   return (
     <>
+      {showCart && (
+        <ShowCart
+          allCartProducts={addCartProduct}
+          onDelete={handleDeleteCart}
+          onCancel={handleCancelbtn}
+        />
+      )}
       {/* Announcement Bar */}
       <div className="bg-black text-white py-2 px-4 text-center text-sm relative">
         <p>
@@ -60,7 +86,10 @@ const Header = () => {
               </span>
             </div>
 
-            <a href="#" className="hover:text-gray-500 transition-colors">
+            <button
+              onClick={handleShowCart}
+              className="hover:text-gray-500 transition-colors relative cursor-pointer"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-6 w-6"
@@ -75,7 +104,12 @@ const Header = () => {
                   d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"
                 />
               </svg>
-            </a>
+              {addCartProduct.length > 0 && (
+                <span className="absolute -top-1 -right-2 bg-black text-white font-semibold rounded-full w-[20px] aspect-square text-[12px] inline-flex items-center justify-center">
+                  {addCartProduct.length}
+                </span>
+              )}
+            </button>
 
             <a href="#" className="hover:text-gray-500 transition-colors">
               <svg

@@ -17,11 +17,11 @@ const Home = () => {
             <MyCardList />
           </div>
         </main>
-        {/* NewsLetter Sections */}
-        <Newsletter />
-        {/* Footer */}
-        <Footer />
       </ProductProvider>
+      {/* NewsLetter Sections */}
+      <Newsletter />
+      {/* Footer */}
+      <Footer />
     </>
   );
 };
