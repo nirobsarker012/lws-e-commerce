@@ -1,0 +1,15 @@
+@import url("https://fonts.cdnfonts.com/css/satoshi");
+@import "tailwindcss";
+
+.container {
+  @apply max-w-[1370px] w-[calc(100%-20px)] mx-auto;
+}
+
+.satoshi {
+  font-family: "Satoshi", sans-serif;
+}
+
+@theme {
+  --color-shop-black: #000000;
+  --color-shop-red: #ff3333;
+}
